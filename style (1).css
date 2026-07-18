@@ -1,0 +1,655 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-light: #FFE5F0;
+    --primary-medium: #FFB3D9;
+    --secondary-light: #E8F5E9;
+    --secondary-medium: #C8E6C9;
+    --accent-color: #A5D6A7;
+    --text-dark: #2C3E50;
+    --text-light: #5A6C7D;
+    --bg-light: #FAFBFC;
+    --white: #FFFFFF;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+    color: var(--text-dark);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Language Selector */
+.language-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.lang-btn {
+    padding: 8px 16px;
+    border: 2px solid var(--secondary-medium);
+    background: var(--white);
+    color: var(--text-dark);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(165, 214, 167, 0.2);
+}
+
+.lang-btn.active {
+    background: var(--secondary-medium);
+    color: var(--white);
+    border-color: var(--secondary-medium);
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.header h1 {
+    font-size: 48px;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.header p {
+    font-size: 20px;
+    color: var(--text-light);
+    font-weight: 300;
+}
+
+/* Sections */
+.section {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 25px;
+    padding: 40px;
+    margin-bottom: 40px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(165, 214, 167, 0.15);
+}
+
+.section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+/* White Noise Section */
+.noise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.noise-card {
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.noise-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(165, 214, 167, 0.25);
+    border-color: var(--secondary-medium);
+}
+
+.noise-emoji {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.noise-card h3 {
+    font-size: 18px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.noise-description {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.play-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--secondary-medium), var(--accent-color));
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.play-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(165, 214, 167, 0.3);
+}
+
+.play-btn.playing {
+    background: linear-gradient(135deg, var(--primary-medium), #FF8FB3);
+}
+
+.sound-progress {
+    width: 100%;
+    height: 4px;
+    background: rgba(165, 214, 167, 0.3);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--accent-color);
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+/* Breathing Section */
+.breathing-tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.breathing-tab-btn {
+    padding: 12px 24px;
+    border: 2px solid var(--secondary-medium);
+    background: var(--white);
+    color: var(--text-dark);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.breathing-tab-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(165, 214, 167, 0.2);
+}
+
+.breathing-tab-btn.active {
+    background: linear-gradient(135deg, var(--secondary-medium), var(--accent-color));
+    color: var(--white);
+    border-color: transparent;
+}
+
+.breathing-content {
+    position: relative;
+    min-height: 500px;
+}
+
+.breathing-exercise {
+    display: none;
+    opacity: 0;
+    animation: fadeIn 0.3s ease;
+}
+
+.breathing-exercise.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.breathing-info {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.breathing-info p {
+    font-size: 18px;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.breathing-circle-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 40px;
+}
+
+.breathing-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 179, 217, 0.3), rgba(200, 230, 201, 0.3));
+    border: 3px solid var(--secondary-medium);
+    animation: breathe 8s infinite;
+}
+
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.breathing-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+}
+
+.breathing-text .phase {
+    display: block;
+    font-size: 18px;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.breathing-text .phase-time {
+    display: block;
+    font-size: 48px;
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.breathing-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.start-btn {
+    padding: 16px 40px;
+    background: linear-gradient(135deg, var(--secondary-medium), var(--accent-color));
+    color: var(--white);
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(165, 214, 167, 0.3);
+}
+
+.start-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(165, 214, 167, 0.4);
+}
+
+.start-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Affirmations Section */
+.affirmations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.affirmation-card {
+    background: linear-gradient(135deg, var(--secondary-light), rgba(200, 230, 201, 0.5));
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-left: 4px solid var(--accent-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.affirmation-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 4px 15px rgba(165, 214, 167, 0.2);
+}
+
+.affirmation-sparkle {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.affirmation-card p {
+    font-size: 16px;
+    color: var(--text-dark);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* Modal */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+    border-radius: 30px;
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    text-align: center;
+}
+
+.modal-body h2 {
+    margin-bottom: 40px;
+    font-size: 28px;
+    color: var(--text-dark);
+}
+
+.breathing-circle-large {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 179, 217, 0.2), rgba(200, 230, 201, 0.2));
+    border: 3px solid var(--secondary-medium);
+    position: relative;
+    animation: breathe 8s infinite;
+}
+
+.circle-inner {
+    width: 100%;
+    height: 100%;
+}
+
+.breathing-instruction {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.instruction-phase {
+    font-size: 18px;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.instruction-time {
+    font-size: 48px;
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.session-info {
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: var(--text-light);
+}
+
+.cycle-count {
+    font-weight: 500;
+}
+
+.stop-practice-btn {
+    padding: 14px 32px;
+    background: linear-gradient(135deg, var(--primary-medium), #FF8FB3);
+    color: var(--white);
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.stop-practice-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 139, 179, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 36px;
+    }
+
+    .header p {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+
+    .section h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .noise-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 15px;
+    }
+
+    .noise-card {
+        padding: 20px;
+    }
+
+    .noise-emoji {
+        font-size: 36px;
+    }
+
+    .breathing-circle-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .breathing-text .phase-time {
+        font-size: 36px;
+    }
+
+    .affirmation-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .language-selector {
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .header {
+        padding: 25px 15px;
+        margin-bottom: 30px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .header p {
+        font-size: 14px;
+    }
+
+    .section {
+        padding: 20px;
+        margin-bottom: 25px;
+        border-radius: 20px;
+    }
+
+    .section h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .noise-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .noise-card {
+        padding: 15px;
+    }
+
+    .noise-emoji {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .noise-card h3 {
+        font-size: 14px;
+    }
+
+    .noise-description {
+        font-size: 11px;
+    }
+
+    .breathing-tabs {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .breathing-tab-btn {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .breathing-circle-container {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 25px;
+    }
+
+    .breathing-text .phase {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .breathing-text .phase-time {
+        font-size: 28px;
+    }
+
+    .start-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    .affirmation-card {
+        padding: 12px;
+        font-size: 13px;
+        gap: 10px;
+    }
+
+    .affirmation-sparkle {
+        font-size: 20px;
+    }
+
+    .modal-content {
+        padding: 25px;
+        border-radius: 20px;
+    }
+
+    .modal-body h2 {
+        margin-bottom: 25px;
+        font-size: 22px;
+    }
+
+    .breathing-circle-large {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto 30px;
+    }
+}

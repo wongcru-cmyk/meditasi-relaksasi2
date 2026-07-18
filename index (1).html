@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditasi Relaksasi - Mindfulness & Breathing Exercises</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Language Selector -->
+        <div class="language-selector">
+            <button class="lang-btn active" data-lang="id">Bahasa Malaysia</button>
+            <button class="lang-btn" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="zh">中文</button>
+        </div>
+
+        <!-- Header -->
+        <header class="header">
+            <h1 data-i18n="title">🧘 Meditasi Relaksasi</h1>
+            <p data-i18n="subtitle">Temukan Ketenangan dalam Setiap Napas</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- White Noise Section -->
+            <section class="section white-noise-section">
+                <h2 data-i18n="white_noise_title">🎵 Bunyi Sekitar (White Noise)</h2>
+                <div class="noise-grid">
+                    <div class="noise-card" data-sound="rain">
+                        <div class="noise-emoji">🌧️</div>
+                        <h3 data-i18n="sound_rain">Hujan Lembut</h3>
+                        <p class="noise-description" data-i18n="sound_rain_desc">Soft Rain</p>
+                        <button class="play-btn" data-sound="rain">
+                            <span data-i18n="play">▶ Play</span>
+                        </button>
+                        <div class="sound-progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="noise-card" data-sound="ocean">
+                        <div class="noise-emoji">🌊</div>
+                        <h3 data-i18n="sound_ocean">Ombak Laut</h3>
+                        <p class="noise-description" data-i18n="sound_ocean_desc">Ocean Waves</p>
+                        <button class="play-btn" data-sound="ocean">
+                            <span data-i18n="play">▶ Play</span>
+                        </button>
+                        <div class="sound-progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="noise-card" data-sound="forest">
+                        <div class="noise-emoji">🌲</div>
+                        <h3 data-i18n="sound_forest">Angin Hutan</h3>
+                        <p class="noise-description" data-i18n="sound_forest_desc">Forest Wind</p>
+                        <button class="play-btn" data-sound="forest">
+                            <span data-i18n="play">▶ Play</span>
+                        </button>
+                        <div class="sound-progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="noise-card" data-sound="birds">
+                        <div class="noise-emoji">🐦</div>
+                        <h3 data-i18n="sound_birds">Burung Pagi</h3>
+                        <p class="noise-description" data-i18n="sound_birds_desc">Morning Birds</p>
+                        <button class="play-btn" data-sound="birds">
+                            <span data-i18n="play">▶ Play</span>
+                        </button>
+                        <div class="sound-progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="noise-card" data-sound="fireplace">
+                        <div class="noise-emoji">🔥</div>
+                        <h3 data-i18n="sound_fire">Api Berderak</h3>
+                        <p class="noise-description" data-i18n="sound_fire_desc">Crackling Fire</p>
+                        <button class="play-btn" data-sound="fireplace">
+                            <span data-i18n="play">▶ Play</span>
+                        </button>
+                        <div class="sound-progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Breathing Exercises Section -->
+            <section class="section breathing-section">
+                <h2 data-i18n="breathing_title">🫁 Latihan Pernapasan (Breathing Exercises)</h2>
+                
+                <div class="breathing-tabs">
+                    <button class="breathing-tab-btn active" data-exercise="4-7-8">
+                        <span data-i18n="breathing_478">4-7-8 Breathing</span>
+                    </button>
+                    <button class="breathing-tab-btn" data-exercise="box">
+                        <span data-i18n="breathing_box">Box Breathing</span>
+                    </button>
+                    <button class="breathing-tab-btn" data-exercise="simple">
+                        <span data-i18n="breathing_simple">Simple Calm</span>
+                    </button>
+                </div>
+
+                <div class="breathing-content">
+                    <!-- 4-7-8 Breathing -->
+                    <div class="breathing-exercise active" data-exercise="4-7-8">
+                        <div class="breathing-info">
+                            <p data-i18n="breathing_478_desc">Inhale 4s → Hold 7s → Exhale 8s</p>
+                        </div>
+                        <div class="breathing-circle-container">
+                            <div class="breathing-circle"></div>
+                            <div class="breathing-text">
+                                <span class="phase" data-i18n="breathe_in">Breathe In</span>
+                                <span class="phase-time">4</span>
+                            </div>
+                        </div>
+                        <div class="breathing-controls">
+                            <button class="start-btn" data-exercise="4-7-8" data-i18n="start_exercise">🧘 Start Practice</button>
+                        </div>
+                    </div>
+
+                    <!-- Box Breathing -->
+                    <div class="breathing-exercise" data-exercise="box">
+                        <div class="breathing-info">
+                            <p data-i18n="breathing_box_desc">Inhale 4s → Hold 4s → Exhale 4s → Hold 4s</p>
+                        </div>
+                        <div class="breathing-circle-container">
+                            <div class="breathing-circle"></div>
+                            <div class="breathing-text">
+                                <span class="phase" data-i18n="breathe_in">Breathe In</span>
+                                <span class="phase-time">4</span>
+                            </div>
+                        </div>
+                        <div class="breathing-controls">
+                            <button class="start-btn" data-exercise="box" data-i18n="start_exercise">🧘 Start Practice</button>
+                        </div>
+                    </div>
+
+                    <!-- Simple Calm -->
+                    <div class="breathing-exercise" data-exercise="simple">
+                        <div class="breathing-info">
+                            <p data-i18n="breathing_simple_desc">Inhale 4s → Exhale 4s</p>
+                        </div>
+                        <div class="breathing-circle-container">
+                            <div class="breathing-circle"></div>
+                            <div class="breathing-text">
+                                <span class="phase" data-i18n="breathe_in">Breathe In</span>
+                                <span class="phase-time">4</span>
+                            </div>
+                        </div>
+                        <div class="breathing-controls">
+                            <button class="start-btn" data-exercise="simple" data-i18n="start_exercise">🧘 Start Practice</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Affirmations Section -->
+            <section class="section affirmations-section">
+                <h2 data-i18n="affirmations_title">💚 Afirmasi Hari Ini (Today's Affirmations)</h2>
+                <div class="affirmations-list">
+                    <div class="affirmation-card">
+                        <span class="affirmation-sparkle">✨</span>
+                        <p data-i18n="affirmation_1">I am calm and in control of my emotions</p>
+                    </div>
+                    <div class="affirmation-card">
+                        <span class="affirmation-sparkle">✨</span>
+                        <p data-i18n="affirmation_2">I am enough, and I'm doing my best</p>
+                    </div>
+                    <div class="affirmation-card">
+                        <span class="affirmation-sparkle">✨</span>
+                        <p data-i18n="affirmation_3">Challenges help me grow stronger</p>
+                    </div>
+                    <div class="affirmation-card">
+                        <span class="affirmation-sparkle">✨</span>
+                        <p data-i18n="affirmation_4">I deserve rest and kindness</p>
+                    </div>
+                    <div class="affirmation-card">
+                        <span class="affirmation-sparkle">✨</span>
+                        <p data-i18n="affirmation_5">I choose peace over worry right now</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Audio Elements -->
+        <audio id="audio-player" crossorigin="anonymous"></audio>
+    </div>
+
+    <!-- Breathing Exercise Modal -->
+    <div class="modal hidden" id="breathing-modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-body">
+                <h2 data-i18n="practice_session">Practice Session</h2>
+                <div class="breathing-circle-large">
+                    <div class="circle-inner"></div>
+                    <div class="breathing-instruction">
+                        <p class="instruction-phase" data-i18n="breathe_in">Breathe In</p>
+                        <p class="instruction-time">4</p>
+                    </div>
+                </div>
+                <div class="session-info">
+                    <p class="cycle-count" data-i18n="cycle">Cycle: 1/5</p>
+                </div>
+                <button class="stop-practice-btn" data-i18n="stop">Stop</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
